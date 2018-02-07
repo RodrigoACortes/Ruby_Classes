@@ -72,45 +72,48 @@
 
 # Elevator
 
-# class Elevator
-#   attr_accessor :floor
-#   def initialize()
-#   @floor = 1
-#     def go_up
-#       @floor += 1
-#     end
-#     def go_down
-#       @floor -= 1
-#     end
-#   end
-# end
-#
-# change_floor = Elevator.new
-# p "You are currently on floor: #{change_floor.floor}"
-#
-#
-# p "Would you like to go up or down? Type 'up' or 'down', to get off type 'get off'"
-#
-# while user_input = gets.chomp
-#   case user_input
-#   when "up"
-#     if change_floor.floor == 12
-#       p "The building only has 12 floors"
-#     else
-#       p "Going up!"
-#       change_floor.go_up
-#       p change_floor.floor
-#     end
-#   when "down"
-#     if change_floor.floor == 1
-#       p "You can't go lower than floor 1"
-#     else
-#       p "Going down!"
-#       change_floor.go_down
-#       p change_floor.floor
-#     end
-#   when "get off"
-#     p "You decided to get off at floor: #{change_floor.floor}"
-#     break
-#   end
-# end
+class Elevator
+  attr_accessor :floor
+  def initialize()
+  @floor = 1
+    def go_up
+      @floor += 1
+    end
+    def go_down
+      @floor -= 1
+    end
+    def cheery_greeting
+       "You are now on floor: #{@floor}"
+    end
+  end
+end
+
+change_floor = Elevator.new
+p "You are currently on floor: #{change_floor.floor}"
+
+
+p "Would you like to go up or down? Type 'up' or 'down', to get off type 'get off'"
+
+while user_input = gets.chomp
+  case user_input
+  when "up"
+    if change_floor.floor == 12
+      p "The building only has 12 floors"
+    else
+      p "Going up!"
+      change_floor.go_up
+      p change_floor.cheery_greeting
+    end
+  when "down"
+    if change_floor.floor == 1
+      p "You can't go lower than floor 1"
+    else
+      p "Going down!"
+      change_floor.go_down
+      p change_floor.cheery_greeting
+    end
+  when "get off"
+    p "You decided to get off at floor: #{change_floor.floor}"
+    break
+  end
+end
